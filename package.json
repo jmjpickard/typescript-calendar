@@ -1,0 +1,34 @@
+{
+  "name": "typescript-calendar",
+  "version": "1.0.0",
+  "description": "A TypeScript Calendar component for React",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "react",
+    "typescript",
+    "calendar"
+  ],
+  "author": "Jack Pickard",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.8.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.2"
+  }
+}
