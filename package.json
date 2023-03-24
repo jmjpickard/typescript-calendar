@@ -4,6 +4,7 @@
   "description": "A TypeScript Calendar component for React",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "private": false,
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
