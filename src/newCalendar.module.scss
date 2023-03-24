@@ -1,0 +1,141 @@
+@use "/styles/variables";
+@use "/styles/mixins" as mixins;
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+}
+
+.topDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #6aaeb2;
+  font-weight: bold;
+}
+
+.arrowContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: white;
+  background-color: #a9cbcd;
+  width: 25px;
+  height: 25px;
+  &:hover {
+    background-color: #6aaeb2;
+  }
+}
+
+.weekDaysContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.weekDay {
+  font-size: 13px;
+  flex: 0 0 14.2%;
+  text-align: left;
+  color: #c5cbd3;
+}
+
+.dayContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: thin solid #e5e8eb;
+}
+
+.day {
+  flex: 0 0 14%;
+  text-align: left;
+  height: 50px;
+  color: #6aaeb2;
+  border-right: thin solid #e5e8eb;
+  border-bottom: thin solid #e5e8eb;
+
+  @include mixins.breakpoint(variables.$sm) {
+    height: 70px;
+  }
+
+  &:hover {
+    background-color: #d9dbda;
+    color: white;
+  }
+}
+
+.topRow {
+  flex: 0 0 14%;
+  text-align: left;
+  height: 50px;
+  color: #6aaeb2;
+  border-right: thin solid #e5e8eb;
+  border-bottom: thin solid #e5e8eb;
+  border-top: thin solid #e5e8eb;
+  @include mixins.breakpoint(variables.$sm) {
+    height: 70px;
+  }
+  &:hover {
+    background-color: #d9dbda;
+    color: white;
+  }
+}
+
+.selected {
+  background-color: #b0dbdd;
+  color: white;
+  &:hover {
+    background-color: #85acae;
+    color: white;
+  }
+}
+
+.booked {
+  &:hover {
+    background-color: white;
+    color: #85acae;
+  }
+}
+
+.dayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.dayNumber {
+  padding-left: 3px;
+}
+
+.bookedDay {
+  height: 25%;
+  padding: 0;
+  margin-left: -1px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.jack {
+  background-color: #34a0d1;
+}
+
+.charlie {
+  background-color: #3cbe61;
+}
+
+.lily {
+  background-color: #f862e8;
+}
+
+.mumAndDad {
+  background-color: #f86262;
+}
