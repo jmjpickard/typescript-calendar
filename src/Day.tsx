@@ -1,12 +1,12 @@
 import React from 'react';
-import { daysProps } from './Calendar';
+import { DaysProps } from './Calendar';
 import styles from './newCalendar.module.scss';
 import clx from 'classnames';
 
 interface DayArgs {
-  day: daysProps;
+  day: DaysProps;
   topRow: boolean;
-  onClick: (day: daysProps) => void;
+  onClick: (day: DaysProps) => void;
   bookedColor?: string;
 }
 

@@ -1,14 +1,18 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import { NewCalendar, Booking, daysProps } from '../../../src/Calendar';
+import { NewCalendar, Booking, DaysProps } from '../../../src';
 
 import styles from '@/styles/Home.module.css';
 import React from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
-const [setEvent, setEventState] = React.useState<Booking>();
+
+interface Props {
+  name: string;
+}
 
 export default function Home() {
+  const [setEvent, setEventState] = React.useState<Booking>();
   return (
     <>
       <Head>
@@ -19,7 +23,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div>Your Typescript Calendar</div>
-        <NewCalendar onEventClick={(day: daysProps) => console.log(day)} setSelectedEvent={setEventState} />
+        <NewCalendar onEventClick={(day: DaysProps) => console.log(day)} setSelectedEvent={setEventState} />
 
         <div className={styles.grid}>
           <a
